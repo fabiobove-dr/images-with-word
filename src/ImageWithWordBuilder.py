@@ -1,3 +1,6 @@
+""" 
+	Fabio Bove | fabio.bove.dr@gmail.com 
+"""
 from PIL import Image, ImageDraw, ImageFont
 import time
 
