@@ -18,11 +18,19 @@ class ImageWithWordBuilder:
 		self.default_font_family 	= 'arial.ttf'
 		self.font_family 			= self.set_font(font_family, font_size)
 		self.txt_color				= "black"
-		
+		self.font 					= None
 		self.word					= self.set_word(word)
 		self.file_name 				= self.set_filename(file_name)
 		self.image 					= None
+	
+	
+	def get_details(self):
+		details = {
+			self.word,
+			self.file_name 
+			self.font_family,
 
+		}
 	def set_filename(self, file_name: str):
 		self.file_name = f"{str(time.time)}.JPEG" if file_name is None else file_name
 

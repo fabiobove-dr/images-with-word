@@ -6,7 +6,14 @@ from src.ImageWithWordBuilder import ImageWithWordBuilder
 
 
 def main():
-    pass
+    image_with_word = ImageWithWordBuilder(
+        image_size=None, 
+        font_family=None, 
+        font_size=None, 
+        word="Prova", 
+        file_name=None
+    )
+   
 
 if __name__ == "__main__":
     main()
