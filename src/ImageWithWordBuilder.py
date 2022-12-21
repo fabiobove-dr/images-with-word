@@ -29,9 +29,10 @@ class ImageWithWordBuilder:
 	def get_word(self):
 		return self.word 
 
+	# TODO:
+	"""
 	def set_image_size(self, image_size: float) -> None:
-		"""
-		"""
+	
 		print('Setting image size...')
 		if image_size is None or image_size < 100:
 			print(f'Invalid image size, image size value set as default: {self.default_image_size}')
@@ -41,8 +42,7 @@ class ImageWithWordBuilder:
 			self.image_size = image_size   
 
 	def set_font(self, font_family: str, font_size: float) -> None:
-		"""
-		"""
+	
 		print('Setting font...')
 		if font_size < self.minimum_font_size or font_size is None:
 			print(f'Invalid font size, font size set to default value: {self.default_font_size}')
@@ -54,7 +54,7 @@ class ImageWithWordBuilder:
 		self.font = ImageFont.truetype(font_family, font_size)
 
 	def draw_text_on_img(self):
-		"""Draw a text on an Image, saves it, show it"""
+		
 		
 		# create image
 		self.image = Image.new(
@@ -77,3 +77,4 @@ class ImageWithWordBuilder:
 	def save_image(self):
 		# save file
 		self.image.save(self.file_name)
+	"""
