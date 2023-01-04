@@ -2,18 +2,16 @@ import sys
 from pathlib import Path
 sys.path[0] = str(Path(sys.path[0]).parent)
 
-from src.ImageWithWordBuilder import ImageWithWordBuilder
+from src.ImageWithWordImageWithWord import ImageWithWord
 
 
 def main():
-    image_with_word = ImageWithWordBuilder(
-        image_size=None, 
-        font_family=None, 
-        font_size=None, 
-        word="Prova", 
-        file_name=None
-    )
-   
+     
+    # create an instance of the ImageWithWord class with default font name and size
+    image_with_word = ImageWithWord(word='Hello', font_size=24)
+
+    # save the image to a file
+    image_with_word.save_image('word_image.png')
 
 if __name__ == "__main__":
     main()
