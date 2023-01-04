@@ -1,5 +1,6 @@
 """
-Before we start, it's important to note that you'll need to have a Facebook Developer account, and you'll need to apply for Instagram Basic Display API access. Once you have been approved, you'll receive an App ID and an App Secret, which you'll use to authenticate your API requests.
+Before we start, it's important to note that you'll need to have a Facebook Developer account, and you'll need to apply for Instagram Basic Display API access. 
+Once you have been approved, you'll receive an App ID and an App Secret, which you'll use to authenticate your API requests.
 """
 
 import requests
