@@ -46,6 +46,18 @@ class InstagramAPI:
         else:
             raise Exception("Failed to get access token: {}".format(response.text))
 
+    def set_access_token(self, access_token: str) -> None:
+        """
+        Sets the access token for the InstagramAPI instance.
+
+        Parameters:
+        - access_token (str): The access token to be set.
+
+        Returns:
+        - None
+        """
+        self.access_token = access_token
+
     def get_user_profile(self) -> Dict:
         """
         Requests the authenticated user's profile information from the Instagram API.
