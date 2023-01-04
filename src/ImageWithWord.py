@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 
-class WordImage:
+class ImageWithWord:
     DEFAULT_FONT_NAME = 'arial'
     DEFAULT_FONT_SIZE = 36
     DEFAULT_IMAGE_WIDTH = 1080
@@ -8,7 +8,7 @@ class WordImage:
 
     def __init__(self, word: str, font_name: str = DEFAULT_FONT_NAME, font_size: int = DEFAULT_FONT_SIZE,
                  image_width: int = DEFAULT_IMAGE_WIDTH, image_height: int = DEFAULT_IMAGE_HEIGHT):
-        """Initialize the WordImage instance with the given word, font name, font size, image width, and image height.
+        """Initialize the ImageWithWord instance with the given word, font name, font size, image width, and image height.
         
         Args:
             word (str): The word to display in the image.
