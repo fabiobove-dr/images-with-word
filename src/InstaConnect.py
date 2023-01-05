@@ -37,7 +37,7 @@ class InstagramAPI:
             "app_id": self.app_id,
             "app_secret": self.app_secret,
             "grant_type": "authorization_code",
-            "redirect_uri": "YOUR_REDIRECT_URI",
+            "redirect_uri": "http://localhost",
             "code": code
         }
         response = requests.post(url, data=payload)
@@ -57,6 +57,27 @@ class InstagramAPI:
         - None
         """
         self.access_token = access_token
+    def exchange_token(self, short_lived_access_token: str) -> None:
+        """
+        Exchanges a short-lived access token for a long-lived access token and sets it as an attribute of the InstagramAPI instance.
+
+        Parameters:
+        - short_lived_access_token (str): The short-lived access token to be exchanged.
+
+        Returns:
+        - None
+        """
+        url = "https://graph.instagram.com/access_token"
+        params = {
+            "grant_type": "ig_exchange_token",
+            "client_secret": self.app_secret,
+            "access_token": short_lived_access_token
+        }
+        response = requests.get(url, params=params)
+        if response.status_code == 200:
+            self.access_token = response.json()["access_token"]
+        else:
+            raise Exception("Failed to exchange token: {}".format(response.text))
 
     def get_user_profile(self) -> Dict:
         """

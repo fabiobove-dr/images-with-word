@@ -12,7 +12,7 @@ stream          = open('../oauth.yml', 'r')
 settings        = yaml.load(stream, yaml.SafeLoader)
 app_id          = settings['app_id']
 app_secret      = settings['app_secret']
-token_client      = settings['token_client']
+token_client      = settings['short_lived_access_token']
 
 def main():
      
@@ -24,7 +24,8 @@ def main():
     image_with_word.save_image(f'../images/{file_name}.png')
 
     instagram_api = InstagramAPI(app_id, app_secret)
-    instagram_api.set_access_token(access_token=token_client)
-    print(instagram_api.get_user_profile())
+    instagram_api.exchange_token(token_client)
+    instagram_api.post_image("../images/test.png", "This is my image!", ["#cool", "#fun"])
+    
 if __name__ == "__main__":
     main()
