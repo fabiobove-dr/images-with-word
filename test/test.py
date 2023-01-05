@@ -1,17 +1,9 @@
 import sys
 import time
-import yaml
 from pathlib import Path
 sys.path[0] = str(Path(sys.path[0]).parent)
 
 from src.ImageWithWord import ImageWithWord
-
-# Load the oauth_settings.yml file
-stream          = open('../oauth.yml', 'r')
-settings        = yaml.load(stream, yaml.SafeLoader)
-app_id          = settings['app_id']
-app_secret      = settings['app_secret']
-token_client      = settings['short_lived_access_token']
 
 def main():
      
