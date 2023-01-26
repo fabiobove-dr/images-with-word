@@ -8,7 +8,7 @@ from src.ImageWithWord import ImageWithWord
 def main():
      
     # create an instance of the ImageWithWord class with default font name and size
-    image_with_word = ImageWithWord(word='Hello', font_size=24)
+    image_with_word = ImageWithWord(word='Hello', font_size=46)
 
     # save the image to a file
     file_name = time.time()
